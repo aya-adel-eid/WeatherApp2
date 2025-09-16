@@ -1,0 +1,76 @@
+.header{
+  background-image: url(../imges/bg.jpg);
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Inter, sans-serif;
+}
+.form-control:focus{
+  box-shadow: unset;
+  background-color: #3F4968;
+  color: #fff;
+}
+ .my-input input{
+  border:1px solid #3D5273;
+  border-radius: 15px;
+  outline: none;
+  width: 75%;
+  background-color: #3F4968;
+  padding: 10px 0;
+  
+ }
+ .my-input button{
+  padding: 5px 20px ;
+  font-size: 14px;
+  border-radius: 20px;
+ position: absolute;
+  margin: 5px 0;
+  right: 18.4%;
+  top: 49px;
+  color: #fff;
+}
+.my-input input::placeholder{
+  font-size: 14px;
+  color: #CED2D8;
+  padding: 0 8px;
+}
+.name-city{
+  font-size: 30px;
+  font-weight: 400;
+  color: 
+rgb(255, 255, 255);
+}
+.inneer{
+  background-color: #31093bc1;
+  border-radius: 15px;
+  padding: 20px 25px;
+}
+.inneer .myprg{
+  font-size: 18px;
+  font-family: 400;
+  color: rgb(209, 213, 219);
+}
+.inneer .degree{
+  font-size: 80px;
+  font-weight: 400;
+}
+.status{
+  font-size: 16px;
+}
+.icons span,.status{
+color: #fff;
+}
+.icon-deg img{
+width: 100px;
+}
+.my-inner{
+  background-color: #4b2e52a7;
+  text-align: center;
+  border-radius: 15px;
+}
+.my-inner p,.my-inner .degre{
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}

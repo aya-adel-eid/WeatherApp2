@@ -1,0 +1,26 @@
+/* small */
+@media screen and (min-width: 640px) {
+}
+/* mediam */
+@media screen and (min-width: 768px) {
+}
+/* large */
+@media screen and (min-width: 1024px) {
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link:hover {
+    color: #009ad8;
+    border: 2px solid #009ad8;
+    border-radius: 15px;
+  }
+  .navbar .navbar-nav {
+  
+  background-color:transparent;
+}
+.navbar .navbar-nav > li {
+    border: unset;
+    width: auto;
+}
+}
+/* X large */
+@media screen and (min-width: 1280px) {
+}
