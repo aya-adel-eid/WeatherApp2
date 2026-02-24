@@ -25,12 +25,13 @@ var months = [
   "November",
   "December",
 ];
+
 async function getWeather(city = "cairo") {
   var weatherURL = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=b1b6a81d6a9b4385af4120937251209&q=${city}&days=4`
+    `https://api.weatherapi.com/v1/forecast.json?key=b1b6a81d6a9b4385af4120937251209&q=${city}&days=4`,
   );
   weatherResult = await weatherURL.json();
- 
+  console.log(weatherResult.forecast.forecastday.length);
   display(weatherResult);
   console.log(weatherResult);
 }
@@ -47,8 +48,8 @@ function display(data) {
 
   var thirdDateObj = new Date(data.forecast.forecastday[2].date);
   var thirdDayNum = days[thirdDateObj.getDay()];
-  var fourDateObj = new Date(data.forecast.forecastday[3].date);
-  var fourDayNum = days[fourDateObj.getDay()];
+  // var fourDateObj = new Date(data.forecast.forecastday[3].date);
+  // var fourDayNum = days[fourDateObj.getDay()];
   var content = `
  <div class="col-lg-8  ">
    <div class="inneer text-center">
@@ -68,7 +69,7 @@ function display(data) {
                data.current.wind_kph
              }Km/h</span></span>
              <span class="px-3"><img src="imges/icon-compass.png" alt=""><span class="ps-2">${returnDirctionWind(
-               data.current.wind_dir
+               data.current.wind_dir,
              )}</span></span>
               </div>
   
@@ -85,8 +86,8 @@ function display(data) {
                 </div>
                 <div class="degre">${data.forecast.forecastday[1].day.maxtemp_c}
                   <sup>o</sup> \\ ${
-                   data.forecast.forecastday[1].day.mintemp_c
-                 }<sup>o</sup>
+                    data.forecast.forecastday[1].day.mintemp_c
+                  }<sup>o</sup>
                 </div>
                 <div class="status">
                   ${data.forecast.forecastday[1].day.condition.text}
@@ -103,33 +104,15 @@ function display(data) {
                 </div>
                 <div class="degre">${data.forecast.forecastday[2].day.maxtemp_c}
                   <sup>o</sup> \\ ${
-                   data.forecast.forecastday[2].day.mintemp_c
-                 }<sup>o</sup>
+                    data.forecast.forecastday[2].day.mintemp_c
+                  }<sup>o</sup>
                 </div>
                 <div class="status">
                   ${data.forecast.forecastday[2].day.condition.text}
                 </div>
     </div>
    </div>
-   <div class="col-lg-4 col-md-6">
-    <div class="inner my-inner py-2">
-      <p>${fourDayNum}</p>
-      <div class="icon pt-1">
-                <img src="https:${
-                  data.forecast.forecastday[3].day.condition.icon
-                }">
-                </div>
-                <div class="degre">${data.forecast.forecastday[3].day.maxtemp_c}
-                  <sup>o</sup> \\ ${
-                   data.forecast.forecastday[3].day.mintemp_c
-                 }<sup>o</sup>
-                </div>
-                <div class="status">
-                  ${data.forecast.forecastday[3].day.condition.text}
-                </div>
-    </div>
-   </div>
- </div>
+ 
   `;
   rowData.innerHTML = content;
 }
@@ -178,3 +161,22 @@ inputSearch.addEventListener("input", function () {
 btnFind.addEventListener("click", function () {
   search();
 });
+//   <div class="col-lg-4 col-md-6">
+//     <div class="inner my-inner py-2">
+//       <p>${fourDayNum}</p>
+//       <div class="icon pt-1">
+//                 <img src="https:${
+//                   data.forecast.forecastday[3].day.condition.icon
+//                 }">
+//                 </div>
+//                 <div class="degre">${data.forecast.forecastday[3].day.maxtemp_c}
+//                   <sup>o</sup> \\ ${
+//                     data.forecast.forecastday[3].day.mintemp_c
+//                   }<sup>o</sup>
+//                 </div>
+//                 <div class="status">
+//                   ${data.forecast.forecastday[3].day.condition.text}
+//                 </div>
+//     </div>
+//    </div>
+//  </div>
